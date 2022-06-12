@@ -1,0 +1,962 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* { 
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+}
+
+:root {
+    --subheading-font: 'Franklin Gothic Medium', sans-serif;
+    --subheading-font-2: 'SVN-Franko';
+    --heading-font: 'Impact';
+    --content-font: 'Open Sans', sans-serif;
+    --subheading-font-color: #273769;
+    --heading-font-color: #f47721;
+    --content-font-color: #32363f;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    font-size: 5rem;
+    line-height: 6.4rem;
+    color: #222;
+}
+
+h2 {
+    font-size: 4.6rem;
+    line-height: 5.4rem;
+    color: #222;
+}
+
+h4 {
+    font-size: 2.2rem; 
+    color: #222;
+}
+
+h6 {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+p {
+    font-size: 1.6rem;
+    color: var(--content-font-color);
+}
+
+.scrolled {
+    background-color: #fff !important;
+    transition: background-color 200ms linear;
+    box-shadow: 5px 5px 5px rgba(229, 229, 229, 0.3);
+}
+
+.margin-top {
+    padding-top: 50px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/*HEADER NAV SECTION */
+
+header {
+    font-family: var(--subheading-font);
+    border-bottom: 2px solid #222;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+}
+
+#nav-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px 10px;
+    z-index: 1000;
+}
+
+#nav-section .logo {
+    width: 160px;
+}
+
+#nav-section .navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#nav-section .navbar.show {
+    right: 0;
+}
+
+#nav-section .navbar li {
+    list-style: none;
+    margin-left: 60px;
+    position: relative;
+}
+
+#nav-section .navbar li .tab {
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: var(--subheading-font-color);
+}
+
+#nav-section .navbar li .tab.active::after,
+#nav-section .navbar li .tab:hover::after {
+    content: '';
+    width: 130%;
+    right: -15%;
+    height: 7px;
+    background-color: #f3ca22;
+    position: absolute;
+    bottom: 0px;
+    z-index: -1;
+}
+
+/* HOME-SECTION */
+#home {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-image: url(home-background.png);
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#home .self {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-left: 50px;
+}
+
+#home .self .self-desc {
+    margin-top: 120px;
+}
+
+#home .self h2 {
+    font-family: var(--subheading-font-2);
+    font-weight: 300;
+    color: var(--subheading-font-color);
+    font-size: 3rem;
+    margin-bottom: 5px;
+}
+
+#home .self h1 {
+    transform: translate(-2px);
+    font-family: var(--heading-font);
+    font-weight: 400;
+    color: var(--heading-font-color);
+    font-size: 8rem;
+    margin-bottom: 20px;
+}
+
+#home .self p {
+    font-family: var(--content-font);
+    color: var(--content-font-color);
+    font-size: 2rem;
+}
+
+#home .self .home-logos {
+    margin-bottom: 20px;
+}
+
+#home .self .home-logos a {
+    color: var(--heading-font-color);
+    font-size: 2.5rem;
+    padding-right: 15px;
+}
+
+#home .self .home-logos a:hover {
+    color: var(--subheading-font-color);
+}
+
+/* About Me */
+#about {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 100px;
+    max-width: 100%;
+}
+
+#page-num {
+    position: absolute;
+    right: 40px;
+    top: 90px;
+    color: rgb(153, 153, 153);
+    font-family: var(--subheading-font);
+}
+
+#page-num::after {
+    content: "";
+    width: 40px;
+    height: 3px;
+    background-color: var(--heading-font-color);
+    display: block;
+    position: absolute;
+    top: 30px;
+    left: 57px;
+}
+
+#about img {
+    margin-left: 50px;
+    width: 400px;
+    height: 540px;
+    object-fit: cover;
+}
+
+#about .discovery {
+    margin: 0 50px 0 50px;
+}
+
+#about .discovery h3 {
+    font-family: var(--subheading-font);
+    font-size: 2.5rem;
+    color: var(--subheading-font-color);
+    font-weight: 700;
+    line-height: 1.7rem;
+    margin-bottom: 15px;
+}
+
+#about .discovery h1 {
+    font-family: var(--heading-font);
+    font-size: 6rem;
+    font-weight: 300;
+    color: var(--heading-font-color);
+    margin-bottom: 15px;
+}
+
+#about .discovery h1::after {
+    content: '';
+    width: 80px;
+    height: 5px;
+    background-color: var(--subheading-font-color);
+    display: block;
+}
+
+#about .discovery .about-desc {
+    font-family: var(--content-font);
+    font-size: 1.7rem;
+    color: var(--content-font-color);
+    margin-bottom: 35px;
+}
+
+#about .discovery .self-info {
+    width: 100%;
+    margin-bottom: 40px;
+    display: flex;
+    border: 3px solid var(--heading-font-color);
+}
+
+#about .discovery .self-info .contact {
+    margin: 20px 10px 0 20px;
+}
+
+#about .discovery .self-info .contact p {
+    margin-bottom: 25px;
+    font-family: var(--content-font);
+}
+
+#about .discovery .self-info .contact p span {
+    font-family: var(--subheading-font);
+    font-size: 2rem;
+    font-weight: 550;
+    color: var(--heading-font-color);
+}
+
+/* Button */
+
+#about .discovery button {
+    padding: 20px 40px;
+    background-color: var(--heading-font-color);
+    border-radius: 5px;
+    font-family: "Franklin Gothic";
+    font-size: 20px;
+    font-weight: 400;
+}
+
+#about .discovery button a {
+    text-decoration: none;
+    color: #fff;
+}
+
+#about .discovery button:hover,
+#contact .contact-container .contact-form button:hover {
+    background-color: rgba(244, 119, 33, 0.6);
+    cursor: pointer;
+}
+
+/* Projects */
+#projects {
+    padding: 100px 50px 0;
+    max-width: 100%;
+    position: relative;
+}
+
+#projects .projects-header {
+    text-align: center;
+    margin: 0 15px;
+}
+
+#projects .projects-header h1 {
+    font-family: var(--heading-font);
+    font-size: 6rem;
+    font-weight: 300;
+    color: var(--heading-font-color);
+    margin-bottom: 20px;
+}
+
+#projects .projects-header p {
+    font-family: var(--content-font);
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+}
+
+#projects .projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+#projects .projects-container a {
+    text-decoration: none;
+}
+
+#projects .projects-container .project {
+    margin: 18px;
+    width: 30%;
+    border: 2px solid var(--heading-font-color);
+    height: 100%;
+    transition: all 0.6s ease;
+}
+
+#projects .projects-container .project img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+span.netflix {
+   padding-bottom: 10px;
+}
+
+#projects .projects-container .project span {
+    display: block;
+    text-align: center;
+    font-family: "Franklin Gothic";
+    font-size: 1.6rem;
+    font-weight: 420;
+    color: #fff;
+    padding: 20px;
+    background-color: var(--heading-font-color);
+}
+
+#projects .projects-container .project:hover span{
+    background-color: rgba(244, 119, 33, 0.6);
+}
+
+#projects .projects-container .project:hover {
+    transform: scale(1.03);
+    box-shadow: 5px 5px 5px #d3d3d3;
+    object-fit: cover;
+}
+
+
+/* Contact */
+#contact {
+    padding-top: 100px;
+    padding-bottom: 25px;
+    width: 100%;
+    position: relative;
+}
+
+#contact h2 {
+    text-align: center;
+    font-family: var(--heading-font);
+    font-weight: 300;
+    color: var(--heading-font-color);
+    margin-bottom: 50px;
+}
+
+#contact .contact-container {
+    display: flex;
+    justify-content: space-between
+}
+
+#contact .contact-container .contact-address {
+    margin-left: 50px;
+    width: 40%;
+}
+
+#contact .contact-container .contact-address p {
+    margin: 0 0 15px 0;
+    color: var(--content-font-color);
+    font-family: var(--content-font);
+}
+
+#contact .contact-container .contact-address p i {
+    color: var(--content-font-color);
+    margin-right: 5px;
+}
+
+.contact-address .contact-link {
+    margin-bottom: 20px;
+}
+
+.contact-address .contact-link a {
+    font-size: 2.5rem;
+    margin-right: 20px;
+    color: var(--heading-font-color);
+}
+
+.contact-address .contact-link a:hover {
+    color: var(--subheading-font-color);
+}
+
+.contact-address iframe {
+    width: 100%;
+    height: 300px;
+}
+
+#contact .contact-container .contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    padding-left: 50px;
+    margin-right: 50px;
+}
+
+#contact .contact-container .contact-form h3 {
+    font-family: var(--content-font);
+    margin-bottom: 20px;
+    color: var(--content-font-color);
+    font-size: 1.6rem;
+}
+
+#contact .contact-container .contact-form input {
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #ededed;
+    outline-color: var(--heading-font-color);
+    border-radius: 5px;
+}
+
+#contact .contact-container .contact-form textarea {
+    height: 160px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #ededed;
+    outline-color: var(--heading-font-color);
+    font-family: var(--content-font);
+    border-radius: 5px;
+}
+
+#contact .contact-container .contact-form button {
+    padding: 15px;
+    font-size: 2rem;
+    font-weight: 420;
+    font-family: "Franklin Gothic";
+    color: #fff;
+    background-color: var(--heading-font-color);
+    border-radius: 5px;
+}
+
+/* Footer */
+
+footer {
+    width: 100%;
+    height: 50px;
+    background-color: var(--heading-font-color);
+    text-align: center;
+    line-height: 5rem;
+    font-family: var(--content-font);
+}
+
+footer p {
+    color: #fff;
+    font-weight: 500;
+}
+
+/* Bar */
+.mobile {
+    display: none;
+}
+
+#bar {
+    font-size: 2rem;
+    color: var(--subheading-font-color);
+}
+
+/* Close */
+#close {
+    color: var(--subheading-font-color);
+    font-size: 2.5rem;
+    display: none;
+}
+
+/* Resposive */
+
+/* Mobile & Tablet */   
+@media (min-width: 1023px) {
+    
+}
+
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+    #nav-section .navbar {
+        position: absolute;
+        right: -300px;
+        top: 0;
+        width: 300px;
+        height: 100vh;
+        background-color: #f3f3f3;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        box-shadow: -5px 10px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.6s ease;
+    }
+
+    #nav-section .navbar li {
+        margin-left: 0;
+        padding-left: 30px;
+        display: block;
+        width: 100%;
+        line-height: 100%;
+        border-bottom: 2px solid var(--content-font-color);
+        line-height: 5.6rem;
+        cursor: pointer;
+    }
+
+    #nav-section .navbar li a {
+        line-height: 5.6rem;
+        transition: 0.6s padding ease;
+        display: block;
+    }
+
+    #nav-section .navbar li a:hover {
+        color: var(--heading-font-color);
+        padding-left: 20px;
+    }
+
+    #nav-section .navbar li:first-child a {
+        transition: none;
+        padding-left: 0;
+        display: flex;
+        padding: 13px 0px;
+    }
+
+    #nav-section .navbar li .tab.active::after, 
+    #nav-section .navbar li .tab:hover::after {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+
+    #close {  
+        display: inline-block;
+    }
+
+    #close:hover {
+        color: var(--heading-font-color);
+    }
+
+    #nav-section {
+        padding: 10px 25px 10px;
+    }
+
+    #home {
+        height: 70vh;
+    }
+
+    #home .self {
+        margin-left: 25px;
+    }
+
+    #home .self h2 {
+        font-size: 2.5rem;
+    }
+
+    #home .self h1 {
+        font-size: 6.5rem;
+    }
+
+    #home .self p {
+        font-size: 1.6rem;
+    }
+
+    #about img {
+        margin-left: 25px;
+        width: 300px;
+        height: 440px;
+    }
+
+    #about .discovery {
+        margin: 0 25px 0 25px;
+    }
+
+    #page-num {
+        font-size: 4.5rem;
+    }
+
+    #about .discovery h3 {
+        font-size: 2rem;
+        margin-bottom: 0px;
+    }
+
+    #about .discovery h1 {
+        font-family: var(--heading-font);
+        font-size: 5rem;
+        margin-bottom: 10px;
+        line-height: 60px;
+    }
+
+    #about .discovery .about-desc {
+        font-size: 1.6rem;
+        margin-bottom: 25px;
+    }
+
+    #about .discovery .self-info {
+        width: 100%;
+        margin-bottom: 20px;
+        display: inline-flex;
+    }
+
+    #about .discovery .self-info .contact {
+        margin: 10px 5px 0 10px;
+    }
+
+    #about .discovery .self-info .contact p {
+        margin-bottom: 25px;
+        font-size: 1.5rem;
+    }
+
+    #about .discovery .self-info .contact p span {
+        font-size: 1.5rem;
+    }
+
+    #about .discovery button {
+        padding: 15px 35px;
+        font-size: 1.8rem;
+    }
+
+    #projects .projects-header h1 {
+        font-size: 5rem;
+        margin-bottom: 15px;
+    }
+
+    #projects .projects-header p {
+        font-size: 15px;
+        margin-bottom: 15px;
+    }
+
+    #projects .projects-container {
+        margin: 0 25px 0 25px;
+    }
+
+    #projects .projects-container .project {
+        margin: 15px;
+        width: 45%;
+        height: 100%;
+        transition: all 0.6s ease;
+    }
+
+    #contact h2 {
+        margin-bottom: 25px;
+    }
+
+    #contact .contact-container {
+        display: block;
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+
+    #contact .contact-container .contact-address {
+        margin: 0;
+        width: 100%;
+    }
+
+    .contact-address iframe {
+        width: 100%;
+        height: 300px;
+    }
+
+    #contact .contact-container .contact-form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 20px 0 0 0;
+        padding: 0;
+    }
+}
+
+/* Mobile */
+@media (max-width: 739px) {
+    #nav-section .navbar {
+        position: absolute;
+        right: -300px;
+        top: 0;
+        width: 300px;
+        height: 100vh;
+        background-color: #f3f3f3;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        box-shadow: -5px 10px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.6s ease;
+    }
+
+    #nav-section .navbar li {
+        margin-left: 0;
+        padding-left: 30px;
+        display: block;
+        width: 100%;
+        line-height: 100%;
+        border-bottom: 2px solid var(--content-font-color);
+        line-height: 5.6rem;
+        cursor: pointer;
+    }
+
+    #nav-section .navbar li a {
+        line-height: 5.6rem;
+        transition: 0.6s padding ease;
+        display: block;
+    }
+
+    #nav-section .navbar li a:hover {
+        color: var(--heading-font-color);
+        padding-left: 20px;
+    }
+
+    #nav-section .navbar li:first-child a {
+        transition: none;
+        padding-left: 0;
+    }
+
+    #nav-section .navbar li .tab.active::after, 
+    #nav-section .navbar li .tab:hover::after {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+
+    #close {  
+        display: inline-block;
+    }
+
+    #close:hover {
+        color: var(--heading-font-color);
+    }
+
+    #nav-section {
+        padding: 10px 25px 10px;
+    }
+
+    #home {
+        width: 100%;
+        height: 60vh;
+        background-image: url(home-background.png);
+        background-position: middle;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    #home .self {
+        margin-left: 25px;
+    }
+
+    #home .self h2 {
+        font-size: 2rem;
+        margin: 0;
+    }
+
+    #home .self h1 {
+        font-size: 4.5rem;
+        line-height: 4.5rem;
+        margin-bottom: 10px;
+    }
+
+    #home .self p {
+        margin-bottom: 20px;
+        font-size: 1.4rem;
+    }
+
+    #home .self .home-logos {
+        margin-bottom: 75px;
+    }
+
+    #home .self .home-logos a {
+        font-size: 2rem;
+    }
+
+    #about img {
+        display: block;
+        margin: 0 auto;
+        width: 330px;
+        height: 440px;
+    }
+
+    #about {
+        display: block;
+    }
+
+    #about .discovery {
+        margin: 15px 25px 0 25px;
+    }
+
+    #page-num {
+        display: none;
+    }
+
+    #about .discovery h3 {
+        font-size: 2rem;
+        margin-bottom: 0px;
+    }
+
+
+    #about .discovery h1 {
+        font-family: var(--heading-font);
+        font-size: 5rem;
+        margin-bottom: 10px;
+        line-height: 60px;
+    }
+
+    #about .discovery .about-desc {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+    }
+
+    #about .discovery .self-info {
+        width: 100%;
+        margin-bottom: 20px;
+        display: block;
+    }
+
+    #about .discovery .self-info .contact {
+        margin: 10px 5px 0 10px;
+    }
+
+    #about .discovery .self-info .contact p {
+        margin-bottom: 12px;
+        font-size: 1.5rem;
+    }
+
+    #about .discovery .self-info .contact p span {
+        font-size: 1.5rem;
+    }
+
+    #about .discovery button {
+        padding: 15px 35px;
+        font-size: 1.8rem;
+    }
+
+    #projects .projects-header h1 {
+        font-size: 5rem;
+        margin-bottom: 15px;
+    }
+
+    #projects .projects-header p {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    #projects .projects-container {
+        margin: 0 10px 0 10px;
+    }
+
+    #projects .projects-container .project {
+        margin: 5px;
+        width: 45%;
+        height: 100%;
+        transition: all 0.6s ease;
+    }
+
+    #projects .projects-container .project span {
+        font-size: 1.4rem;
+        padding: 15px 20px;
+    }
+
+    #contact h2 {
+        margin-bottom: 25px;
+    }
+
+    #contact .contact-container {
+        display: block;
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+
+    #contact .contact-container .contact-address {
+        margin: 0;
+        width: 100%;
+    }
+
+    .contact-address iframe {
+        width: 100%;
+        height: 300px;
+    }
+
+    #contact .contact-container .contact-form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 20px 0 0 0;
+        padding: 0;
+    }
+
+    #contact .contact-container .contact-address p {
+        font-size: 1.4rem;
+    }
+
+    .contact-address .contact-link a {
+        font-size: 2rem;
+    }
+
+    #contact .contact-container .contact-form h3 {
+        font-size: 1.5rem;
+    }
+
+    #contact .contact-container .contact-form input {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    #contact .contact-container .contact-form button {
+        padding: 15px;
+        font-size: 2rem;
+    }
+}
